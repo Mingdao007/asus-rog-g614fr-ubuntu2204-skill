@@ -1,7 +1,11 @@
 # Audio Workflow
 
-Use this reference when the machine loses built-in speaker output on Ubuntu but
-wired headphones still work.
+Use this reference for:
+
+- Ubuntu 22.04
+- Realtek `1043:1054`
+- built-in speakers silent
+- wired headphones still work
 
 ## Confirmed Symptom Pattern
 
@@ -58,5 +62,3 @@ Warn the user before any command that will emit audible sound.
 
 - Keep Bluetooth audio separate from the built-in speaker path
 - Keep the fix machine-specific
-- Treat login-time default mute as a separate convenience setting, not the root
-  cause of speaker failure

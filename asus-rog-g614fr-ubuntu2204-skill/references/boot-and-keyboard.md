@@ -1,7 +1,9 @@
 # Boot And Keyboard Workflow
 
-Use this reference when the machine shows long blank-screen boot delays, text
-stalls before login, or keyboard-dependent boot hangs.
+Use this reference for two cases:
+
+- Ubuntu 22.04 + `6.8.0-85-generic`: `30-40s` blank screen before `/init`
+- `ROCCAT Vulcan II Max` (`1e7d:2ee2`): boot changes or hangs when attached
 
 ## Core Diagnosis
 
@@ -73,8 +75,7 @@ these lower-risk tuning steps:
 
 - keep GRUB hidden with a short timeout
 - remove `splash` if a cleaner boot path is preferred
-- disable NVIDIA CDI refresh only if the machine does not need NVIDIA GPU
-  containers
+- disable NVIDIA CDI refresh only if the machine does not need NVIDIA GPU containers
 - disable BIOS `Network Stack`, `PXE`, or `HTTP Boot` if unused
 
 Avoid deeper BIOS changes until the machine is already stable.
@@ -100,10 +101,5 @@ If the result is not clearly better and stable, leave it off.
 
 ## Residual Noise
 
-You may still see:
-
-- `PCIe / AER`
-- NVMe errors such as `BadTLP`, `BadDLLP`, `RxErr`, or `Timeout`
-
-These are separate from the confirmed `acpi_gpio_handle_deferred_request_irqs`
-boot stall. Do not conflate them.
+`PCIe / AER` or NVMe errors such as `BadTLP`, `BadDLLP`, `RxErr`, or `Timeout`
+are separate from the confirmed `acpi_gpio_handle_deferred_request_irqs` boot stall.

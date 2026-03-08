@@ -1,29 +1,24 @@
 ---
 name: asus-rog-g614fr-ubuntu2204-skill
-description: Maintenance workflow for ASUS ROG Strix G16 G614FR on Ubuntu 22.04. Use when diagnosing or maintaining long blank-screen boot delays, keyboard-connected-at-boot hangs, BIOS or GRUB boot tuning, built-in speaker fixes where wired headphones still work, or login-time mute behavior on this machine family.
+description: "Maintenance workflow for ASUS ROG Strix G16 G614FR on Ubuntu 22.04. Use when diagnosing or maintaining: (1) a 30-40 second blank screen before /init on kernel 6.8.0-85-generic, (2) boot changes or hangs when a ROCCAT Vulcan II Max (1e7d:2ee2) is attached, (3) built-in speakers silent while wired headphones still work on Realtek 1043:1054, or (4) GRUB and BIOS boot tuning on this model family."
 ---
 
 # ASUS ROG G614FR Ubuntu 22.04 Skill
 
-Use this skill for ASUS ROG Strix G16 G614FR machines running Ubuntu 22.04,
-especially when the machine shows the same boot and audio patterns that were
-already confirmed on a working reference system.
-
-Validated baseline: Ubuntu 22.04 + kernel `6.8.0-85-generic` + NVIDIA driver
-`580.95.05`.
+Validated baseline: Ubuntu `22.04` + kernel `6.8.0-85-generic` + NVIDIA driver `580.95.05`.
 
 Read [`references/current-state.md`](references/current-state.md) when exact
 known-good versions, kernel parameters, or confirmed findings matter.
 
 ## Quick Start
 
-Pick the narrowest branch first:
+Pick one branch:
 
-1. Long blank screen or early text stall during boot:
+1. Ubuntu 22.04 + `6.8.0-85-generic`: `30-40s` blank screen before `/init`
    read [`references/boot-and-keyboard.md`](references/boot-and-keyboard.md)
-2. Boot behavior changes when a USB keyboard is attached:
+2. `ROCCAT Vulcan II Max` (`1e7d:2ee2`): boot changes when attached
    read [`references/boot-and-keyboard.md`](references/boot-and-keyboard.md)
-3. Built-in speakers fail but wired headphones still work:
+3. Realtek `1043:1054`: built-in speakers silent while wired headphones still work
    read [`references/audio.md`](references/audio.md)
 4. Need the known-good baseline before making changes:
    read [`references/current-state.md`](references/current-state.md)
@@ -49,7 +44,6 @@ Use this branch for:
 - built-in speaker regressions
 - machine-specific Realtek quirk rebuilds
 - rollback of local speaker overrides
-- login-time mute changes
 
 Follow [`references/audio.md`](references/audio.md).
 

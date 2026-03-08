@@ -1,26 +1,19 @@
-# ROG G614FR Ubuntu Maintenance Skill 中文说明
+# ASUS ROG G614FR Ubuntu 22.04 Skill 中文说明
 
-英文主说明请优先看：
+英文主说明：
 
 - [README.md](README.md)
 
-这个仓库放的是一个公开的 Codex skill，目标机器是 ASUS ROG G614FR，
-也就是国内常见的 ROG 魔霸9 这一类机型。
+目标机型：
 
-它主要覆盖这几类问题：
+- ASUS ROG Strix G16 `G614FR`
 
-- 开机前期出现三十多秒空白或卡住
-- 插着键盘开机会异常
-- BIOS / GRUB 启动优化
-- Ubuntu 内置喇叭无声，但有线耳机正常
-- 登录后默认静音这类便利设置
+覆盖问题：
 
-真正的 skill 内容在：
+- Ubuntu 22.04 + `6.8.0-85-generic` 开机前期 `30-40s` 空白
+- `ROCCAT Vulcan II Max` (`1e7d:2ee2`) 插着开机会异常
+- Realtek `1043:1054` 内置喇叭无声，但有线耳机正常
+
+Skill 目录：
 
 - [asus-rog-g614fr-ubuntu2204-skill](./asus-rog-g614fr-ubuntu2204-skill)
-
-如果你是第一次看这个仓库，建议顺序是：
-
-1. 先看英文版 [README.md](README.md)
-2. 再看 skill 主文件
-3. 最后按里面引用的 `references/*.md` 分支处理具体问题

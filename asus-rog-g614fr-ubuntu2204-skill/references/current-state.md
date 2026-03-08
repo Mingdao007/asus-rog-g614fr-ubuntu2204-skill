@@ -1,13 +1,8 @@
 # Current State
 
-This reference captures a known-good Ubuntu baseline for ASUS ROG Strix G16
-G614FR systems based on a successful repair workflow completed on March 8,
-2026.
-
 ## Machine Identity
 
-- Model family: `ASUS ROG Strix G16 G614FR`
-- Common China-market name: `ROG Moba 9`
+- Model: `ASUS ROG Strix G16 G614FR`
 - External keyboard used during boot diagnosis:
   - `ROCCAT Vulcan II Max`
   - USB ID `1e7d:2ee2`
@@ -16,6 +11,7 @@ G614FR systems based on a successful repair workflow completed on March 8,
 
 - Ubuntu kernel: `6.8.0-85-generic`
 - Ubuntu package version: `6.8.0-85.85~22.04.1`
+- NVIDIA driver: `580.95.05`
 - Known-good boot cmdline:
   - `quiet gpiolib_acpi.run_edge_events_on_boot=0`
 - Known-good GRUB state:
@@ -32,28 +28,16 @@ G614FR systems based on a successful repair workflow completed on March 8,
 - The kernel parameter that removed the stall was:
   - `gpiolib_acpi.run_edge_events_on_boot=0`
 
-## Timing Interpretation
+## Healthy Linux-Side Boot
 
-After the fix:
-
-- Linux-side boot can be normal even when total wall-clock boot still feels
-  longer because firmware time dominates.
-- A healthy Linux-side target is roughly:
-  - `/init` reached in under `1s`
-  - `userspace` around `3s`
-
-## Fast Boot
-
-- BIOS `Fast Boot` was not consistently better on the reference machine.
-- Treat it as a controlled experiment, not an assumed improvement.
+- `/init` reached in under about `1s`
+- `userspace` around `3s`
 
 ## Audio Findings
 
-- The working audio fix was machine-specific.
-- The important symptom pattern was:
+- Symptom pattern:
   - built-in speakers fail
   - wired headphones still work
-  - hardware is known good from Windows or another OS
 - The successful root cause was a missing Realtek HDA quirk for subsystem
   `1043:1054`.
 
@@ -63,6 +47,7 @@ Safe BIOS changes to consider:
 
 - disable `Network Stack`, `PXE`, or `HTTP Boot` if unused
 - minimize any BIOS post delay if such an option exists
+- test `Fast Boot`, but do not assume it is better
 
 Do not casually change:
 

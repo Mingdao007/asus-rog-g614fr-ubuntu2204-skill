@@ -1,36 +1,23 @@
 # ASUS ROG G614FR Ubuntu 22.04 Skill
 
-Public Codex skill for ASUS ROG G614FR systems running Ubuntu 22.04, based on
-boot and audio repair workflows validated on a working reference machine.
+Model: `ASUS ROG Strix G16 G614FR`
 
-This repository covers:
+Validated baseline:
 
-- long blank-screen boot delays before `/init`
-- keyboard-connected-at-boot instability
-- BIOS and GRUB tuning
-- built-in speaker recovery when wired headphones still work
-- login-time mute behavior
+- Ubuntu `22.04`
+- kernel `6.8.0-85-generic`
+- NVIDIA driver `580.95.05`
 
-For the Chinese guide, see [README.zh-CN.md](README.zh-CN.md).
+Problems:
 
-## Skill Directory
+- Ubuntu 22.04 + `6.8.0-85-generic`: `30-40s` blank screen before `/init`
+- `ROCCAT Vulcan II Max` (`1e7d:2ee2`): boot changes or hangs when attached
+- Realtek `1043:1054`: built-in speakers silent while wired headphones still work
 
-The skill itself lives in:
+Skill:
 
 - [`asus-rog-g614fr-ubuntu2204-skill`](./asus-rog-g614fr-ubuntu2204-skill)
 
-## Main Known-Good Baseline
+Chinese:
 
-- Ubuntu kernel: `6.8.0-85-generic`
-- Working boot parameter:
-  - `gpiolib_acpi.run_edge_events_on_boot=0`
-- Working GRUB shape:
-  - `hidden` menu
-  - short timeout
-  - no `splash`
-
-## Notes
-
-- This is a machine-family-specific skill, not a generic Ubuntu laptop skill.
-- The audio fix is narrow and model-specific.
-- BIOS `Fast Boot` should be treated as a test item, not a universal default.
+- [README.zh-CN.md](README.zh-CN.md)
