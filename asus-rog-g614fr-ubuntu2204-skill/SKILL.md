@@ -1,6 +1,6 @@
 ---
 name: asus-rog-g614fr-ubuntu2204-skill
-description: "Maintenance workflow for ASUS ROG Strix G16 G614FR on Ubuntu 22.04. Use when diagnosing or maintaining: (1) a 30-40 second blank screen before /init on kernel 6.8.0-85-generic, (2) boot changes or hangs when a ROCCAT Vulcan II Max (1e7d:2ee2) is attached, (3) built-in speakers silent while wired headphones still work on Realtek 1043:1054, (4) Google Chrome keyring password prompts under GDM autologin, or (5) GRUB and BIOS boot tuning on this model family."
+description: "Maintenance workflow for ASUS ROG Strix G16 G614FR on Ubuntu 22.04. Use when diagnosing or maintaining: (1) a 30-40 second blank screen before /init on kernel 6.8.0-85-generic, (2) boot changes or hangs when a ROCCAT Vulcan II Max (1e7d:2ee2) is attached, (3) built-in speakers silent while wired headphones still work on Realtek 1043:1054, (4) the known unresolved Google Chrome keyring password prompt under GDM autologin, or (5) GRUB and BIOS boot tuning on this model family."
 ---
 
 # ASUS ROG G614FR Ubuntu 22.04 Skill
@@ -20,7 +20,7 @@ Pick one branch:
    read [`references/boot-and-keyboard.md`](references/boot-and-keyboard.md)
 3. Realtek `1043:1054`: built-in speakers silent while wired headphones still work
    read [`references/audio.md`](references/audio.md)
-4. GDM autologin + Google Chrome: keyring password prompt on first launch after boot
+4. Known unresolved issue: GDM autologin + Google Chrome keyring password prompt on first launch after boot
    read [`references/chrome-keyring.md`](references/chrome-keyring.md)
 5. Need the known-good baseline before making changes:
    read [`references/current-state.md`](references/current-state.md)
@@ -53,7 +53,7 @@ Follow [`references/audio.md`](references/audio.md).
 
 Use this branch for:
 
-- Chrome keyring prompts under GDM autologin
+- the known unresolved Chrome keyring prompt under GDM autologin
 
 Follow [`references/chrome-keyring.md`](references/chrome-keyring.md).
 

@@ -5,9 +5,10 @@ Use this reference when:
 - GDM autologin is enabled
 - Google Chrome asks for a keyring password on first launch after boot
 
-## Reference-Machine Result
+## Status
 
-The public record for this branch is a failure case, not a recommended fix.
+- known unresolved issue on the reference machine
+- the public record for this branch is a failure case, not a recommended fix
 
 Rejected workaround:
 
