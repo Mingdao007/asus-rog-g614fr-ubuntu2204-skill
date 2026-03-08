@@ -1,0 +1,4 @@
+interface:
+  display_name: "ASUS ROG G614FR Ubuntu 22.04 Skill"
+  short_description: "Boot, keyboard, and audio on ASUS ROG G614FR Ubuntu 22.04"
+  default_prompt: "Use $asus-rog-g614fr-ubuntu2204-skill to diagnose or maintain slow boot, keyboard-at-boot issues, BIOS/GRUB tuning, and built-in speaker fixes on an ASUS ROG G614FR running Ubuntu 22.04."

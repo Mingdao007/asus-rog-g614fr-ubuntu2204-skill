@@ -1,4 +1,0 @@
-interface:
-  display_name: "ROG G614FR Ubuntu Maintenance"
-  short_description: "Maintain boot, keyboard, and audio on ASUS ROG G614FR"
-  default_prompt: "Use $rog-mob9-ubuntu-maintenance to diagnose or maintain slow boot, keyboard-at-boot issues, BIOS/GRUB tuning, and built-in speaker fixes on an ASUS ROG G614FR running Ubuntu."

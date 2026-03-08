@@ -1,13 +1,13 @@
 ---
-name: rog-mob9-ubuntu-maintenance
-description: Maintenance workflow for ASUS ROG 魔霸9 / ROG Strix G16 G614FR on Ubuntu. Use when diagnosing or maintaining long blank-screen boot delays, keyboard-connected-at-boot hangs, BIOS or GRUB boot tuning, built-in speaker fixes where wired headphones still work, or login-time mute behavior on this machine family.
+name: asus-rog-g614fr-ubuntu2204-skill
+description: Maintenance workflow for ASUS ROG Strix G16 G614FR on Ubuntu 22.04. Use when diagnosing or maintaining long blank-screen boot delays, keyboard-connected-at-boot hangs, BIOS or GRUB boot tuning, built-in speaker fixes where wired headphones still work, or login-time mute behavior on this machine family.
 ---
 
-# ROG 魔霸9 Ubuntu Maintenance
+# ASUS ROG G614FR Ubuntu 22.04 Skill
 
-Use this skill for ASUS ROG 魔霸9 / ROG Strix G16 G614FR machines running
-Ubuntu, especially when the machine shows the same boot and audio patterns that
-were already confirmed on a working reference system.
+Use this skill for ASUS ROG Strix G16 G614FR machines running Ubuntu 22.04,
+especially when the machine shows the same boot and audio patterns that were
+already confirmed on a working reference system.
 
 Read [`references/current-state.md`](references/current-state.md) when exact
 known-good versions, kernel parameters, or confirmed findings matter.

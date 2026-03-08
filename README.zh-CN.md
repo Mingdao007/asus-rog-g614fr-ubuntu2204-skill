@@ -17,7 +17,7 @@
 
 真正的 skill 内容在：
 
-- [rog-mob9-ubuntu-maintenance](./rog-mob9-ubuntu-maintenance)
+- [asus-rog-g614fr-ubuntu2204-skill](./asus-rog-g614fr-ubuntu2204-skill)
 
 如果你是第一次看这个仓库，建议顺序是：
 

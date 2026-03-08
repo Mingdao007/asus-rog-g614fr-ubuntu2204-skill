@@ -1,8 +1,7 @@
-# ROG G614FR Ubuntu Maintenance Skill
+# ASUS ROG G614FR Ubuntu 22.04 Skill
 
-Public Codex skill for ASUS ROG G614FR systems, including the China-market
-ROG Moba 9 line, focused on Ubuntu maintenance workflows that were validated on
-a working reference machine.
+Public Codex skill for ASUS ROG G614FR systems running Ubuntu 22.04, based on
+boot and audio repair workflows validated on a working reference machine.
 
 This repository covers:
 
@@ -18,7 +17,7 @@ For the Chinese guide, see [README.zh-CN.md](README.zh-CN.md).
 
 The skill itself lives in:
 
-- [`rog-mob9-ubuntu-maintenance`](./rog-mob9-ubuntu-maintenance)
+- [`asus-rog-g614fr-ubuntu2204-skill`](./asus-rog-g614fr-ubuntu2204-skill)
 
 ## Main Known-Good Baseline
 

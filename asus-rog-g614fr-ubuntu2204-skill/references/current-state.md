@@ -1,13 +1,13 @@
 # Current State
 
-This reference captures a known-good Ubuntu baseline for ASUS ROG 魔霸9 / ROG
-Strix G16 G614FR systems based on a successful repair workflow completed on
-March 8, 2026.
+This reference captures a known-good Ubuntu baseline for ASUS ROG Strix G16
+G614FR systems based on a successful repair workflow completed on March 8,
+2026.
 
 ## Machine Identity
 
 - Model family: `ASUS ROG Strix G16 G614FR`
-- Common China-market name: `ROG 魔霸9`
+- Common China-market name: `ROG Moba 9`
 - External keyboard used during boot diagnosis:
   - `ROCCAT Vulcan II Max`
   - USB ID `1e7d:2ee2`
