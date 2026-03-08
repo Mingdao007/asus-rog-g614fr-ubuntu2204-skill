@@ -1,0 +1,78 @@
+---
+name: rog-mob9-ubuntu-maintenance
+description: Maintenance workflow for ASUS ROG 魔霸9 / ROG Strix G16 G614FR on Ubuntu. Use when diagnosing or maintaining long blank-screen boot delays, keyboard-connected-at-boot hangs, BIOS or GRUB boot tuning, built-in speaker fixes where wired headphones still work, or login-time mute behavior on this machine family.
+---
+
+# ROG 魔霸9 Ubuntu Maintenance
+
+Use this skill for ASUS ROG 魔霸9 / ROG Strix G16 G614FR machines running
+Ubuntu, especially when the machine shows the same boot and audio patterns that
+were already confirmed on a working reference system.
+
+Read [`references/current-state.md`](references/current-state.md) when exact
+known-good versions, kernel parameters, or confirmed findings matter.
+
+## Quick Start
+
+Pick the narrowest branch first:
+
+1. Long blank screen or early text stall during boot:
+   read [`references/boot-and-keyboard.md`](references/boot-and-keyboard.md)
+2. Boot behavior changes when a USB keyboard is attached:
+   read [`references/boot-and-keyboard.md`](references/boot-and-keyboard.md)
+3. Built-in speakers fail but wired headphones still work:
+   read [`references/audio.md`](references/audio.md)
+4. Need the known-good baseline before making changes:
+   read [`references/current-state.md`](references/current-state.md)
+
+## Workflow
+
+### 1. Boot And Keyboard
+
+Use this branch for:
+
+- `30-40s` blank-screen boot delays
+- keyboard-connected boot hangs
+- BIOS boot tuning
+- GRUB tuning
+- collecting comparable boot samples
+
+Follow [`references/boot-and-keyboard.md`](references/boot-and-keyboard.md).
+
+### 2. Audio
+
+Use this branch for:
+
+- built-in speaker regressions
+- machine-specific Realtek quirk rebuilds
+- rollback of local speaker overrides
+- login-time mute changes
+
+Follow [`references/audio.md`](references/audio.md).
+
+### 3. Baseline Verification
+
+Before changing anything, confirm:
+
+```bash
+uname -r
+cat /proc/cmdline
+grep -E '^(GRUB_TIMEOUT_STYLE|GRUB_TIMEOUT|GRUB_CMDLINE_LINUX_DEFAULT)=' /etc/default/grub
+systemd-analyze
+```
+
+If the running kernel differs from the known-good baseline, treat both boot and
+audio work as new integration work. Do not assume the old conclusions still
+transfer unchanged.
+
+## Rules
+
+- Keep fixes machine-specific to this model family.
+- Warn explicitly before any command that will emit audible sound.
+- Treat Bluetooth audio as separate from the built-in speaker path unless the
+  user explicitly asks for Bluetooth.
+- For boot issues, isolate pre-`/init` stalls before tuning normal userspace
+  services.
+- Once userspace boot is already around `3s`, firmware and BIOS behavior become
+  the main bottleneck.
+- Treat BIOS `Fast Boot` as a test item, not a default recommendation.
