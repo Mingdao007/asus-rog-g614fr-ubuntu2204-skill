@@ -41,6 +41,14 @@
 - The successful root cause was a missing Realtek HDA quirk for subsystem
   `1043:1054`.
 
+## Chrome And Keyring
+
+- Symptom pattern:
+  - GDM autologin enabled
+  - Google Chrome asks for a keyring password on first launch after boot
+- Verified workaround on the reference machine:
+  - per-user Chrome desktop overrides with `--password-store=basic`
+
 ## BIOS Notes
 
 Safe BIOS changes to consider:
