@@ -46,8 +46,9 @@
 - Symptom pattern:
   - GDM autologin enabled
   - Google Chrome asks for a keyring password on first launch after boot
-- Verified workaround on the reference machine:
+- Rejected workaround on the reference machine:
   - per-user Chrome desktop overrides with `--password-store=basic`
+  - this removed access to existing saved secrets and was rolled back
 
 ## BIOS Notes
 

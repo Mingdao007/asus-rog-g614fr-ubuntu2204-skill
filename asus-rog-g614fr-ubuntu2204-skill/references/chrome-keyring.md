@@ -7,25 +7,31 @@ Use this reference when:
 
 ## Reference-Machine Result
 
-The reliable convenience fix on the reference machine was not a GNOME keyring
-password change. It was a per-user Chrome launcher override:
+The public record for this branch is a failure case, not a recommended fix.
+
+Rejected workaround:
 
 - add `--password-store=basic` to every `Exec=` line in:
   - `~/.local/share/applications/google-chrome.desktop`
   - `~/.local/share/applications/com.google.Chrome.desktop`
+- outcome on the reference machine:
+  - Chrome stopped using GNOME keyring
+  - existing saved secrets were no longer available in the expected way
+  - the workaround was rolled back
 
-## Why This Branch Won
+## Public Guidance
 
-- it preserves GDM autologin
-- it is per-user, not system-wide
-- it stops Chrome from depending on GNOME keyring on this machine
+- keep the stock Chrome launcher
+- if `--password-store=basic` was applied, remove the user-level overrides above
+- do not present this workaround as a general fix for this model
 
 ## Retest Rule
 
 - fully exit Chrome before retesting
-- if the prompt persists, verify Chrome is launching from the user-level
-  `.desktop` override, not the system desktop file
+- after rollback, retest from the stock system launcher
 
 ## Tradeoff
 
-- Chrome uses its own local basic password store instead of GNOME keyring
+- current public state:
+  - keyring prompt under autologin remains a known issue
+  - the previously tested Chrome override is documented as rejected

@@ -54,7 +54,6 @@ Follow [`references/audio.md`](references/audio.md).
 Use this branch for:
 
 - Chrome keyring prompts under GDM autologin
-- per-user Chrome launcher overrides
 
 Follow [`references/chrome-keyring.md`](references/chrome-keyring.md).
 
@@ -84,5 +83,6 @@ transfer unchanged.
 - Once userspace boot is already around `3s`, firmware and BIOS behavior become
   the main bottleneck.
 - Treat BIOS `Fast Boot` as a test item, not a default recommendation.
-- For Chrome keyring prompts under autologin, prefer a per-user Chrome desktop
-  override over system-wide package edits.
+- Do not publish `--password-store=basic` as a recommended fix for this model;
+  keep it documented only as a rejected path if it caused loss of access to
+  existing saved secrets.
