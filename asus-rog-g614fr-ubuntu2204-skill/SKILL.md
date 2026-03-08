@@ -9,6 +9,9 @@ Use this skill for ASUS ROG Strix G16 G614FR machines running Ubuntu 22.04,
 especially when the machine shows the same boot and audio patterns that were
 already confirmed on a working reference system.
 
+Validated baseline: Ubuntu 22.04 + kernel `6.8.0-85-generic` + NVIDIA driver
+`580.95.05`.
+
 Read [`references/current-state.md`](references/current-state.md) when exact
 known-good versions, kernel parameters, or confirmed findings matter.
 
