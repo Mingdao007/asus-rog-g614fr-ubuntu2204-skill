@@ -13,6 +13,7 @@ Problems:
 - Ubuntu 22.04 + `6.8.0-85-generic`: `30-40s` blank screen before `/init`
 - `ROCCAT Vulcan II Max` (`1e7d:2ee2`): boot failure when attached at power-on
 - Realtek `1043:1054`: built-in speakers silent while wired headphones still work
+- `nvm` warning on terminal startup from conflicting npm prefix or `.npmrc`
 - Known unresolved issue: GDM autologin + Google Chrome keyring password prompt on first launch after boot
 
 Skill:

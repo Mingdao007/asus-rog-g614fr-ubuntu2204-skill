@@ -1,6 +1,6 @@
 ---
 name: asus-rog-g614fr-ubuntu2204-skill
-description: "Maintenance workflow for ASUS ROG Strix G16 G614FR on Ubuntu 22.04. Use when diagnosing or maintaining: (1) a 30-40 second blank screen before /init on kernel 6.8.0-85-generic, (2) boot changes or hangs when a ROCCAT Vulcan II Max (1e7d:2ee2) is attached, (3) built-in speakers silent while wired headphones still work on Realtek 1043:1054, (4) the known unresolved Google Chrome keyring password prompt under GDM autologin, or (5) GRUB and BIOS boot tuning on this model family."
+description: "Maintenance workflow for ASUS ROG Strix G16 G614FR on Ubuntu 22.04. Use when diagnosing or maintaining: (1) a 30-40 second blank screen before /init on kernel 6.8.0-85-generic, (2) boot changes or hangs when a ROCCAT Vulcan II Max (1e7d:2ee2) is attached, (3) built-in speakers silent while wired headphones still work on Realtek 1043:1054, (4) nvm terminal-startup warnings caused by conflicting npm prefix or user .npmrc settings, (5) the known unresolved Google Chrome keyring password prompt under GDM autologin, or (6) GRUB and BIOS boot tuning on this model family."
 ---
 
 # ASUS ROG G614FR Ubuntu 22.04 Skill
@@ -20,9 +20,11 @@ Pick one branch:
    read [`references/boot-and-keyboard.md`](references/boot-and-keyboard.md)
 3. Realtek `1043:1054`: built-in speakers silent while wired headphones still work
    read [`references/audio.md`](references/audio.md)
-4. Known unresolved issue: GDM autologin + Google Chrome keyring password prompt on first launch after boot
+4. `nvm` warns on terminal startup about `.npmrc`, `prefix`, or `globalconfig`
+   read [`references/terminal-and-node.md`](references/terminal-and-node.md)
+5. Known unresolved issue: GDM autologin + Google Chrome keyring password prompt on first launch after boot
    read [`references/chrome-keyring.md`](references/chrome-keyring.md)
-5. Need the known-good baseline before making changes:
+6. Need the known-good baseline before making changes:
    read [`references/current-state.md`](references/current-state.md)
 
 ## Workflow
@@ -57,7 +59,15 @@ Use this branch for:
 
 Follow [`references/chrome-keyring.md`](references/chrome-keyring.md).
 
-### 4. Baseline Verification
+### 4. Terminal And Node
+
+Use this branch for:
+
+- `nvm` startup warnings about `.npmrc`, `prefix`, or `globalconfig`
+
+Follow [`references/terminal-and-node.md`](references/terminal-and-node.md).
+
+### 5. Baseline Verification
 
 Before changing anything, confirm:
 
@@ -83,6 +93,8 @@ transfer unchanged.
 - Once userspace boot is already around `3s`, firmware and BIOS behavior become
   the main bottleneck.
 - Treat BIOS `Fast Boot` as a test item, not a default recommendation.
+- For `nvm` startup warnings, clear conflicting npm config before changing shell
+  startup files or patching `nvm`.
 - Do not publish `--password-store=basic` as a recommended fix for this model;
   keep it documented only as a rejected path if it caused loss of access to
   existing saved secrets.

@@ -52,6 +52,17 @@
   - per-user Chrome desktop overrides with `--password-store=basic`
   - this removed access to existing saved secrets and was rolled back
 
+## Terminal And Node
+
+- Resolved symptom:
+  - `nvm` warning on terminal startup about user `.npmrc`, `prefix`, or
+    `globalconfig`
+- Resolved state on the reference machine:
+  - `~/.npmrc` absent
+  - `~/.nvm/.npmrc` contains only `package-lock=false`
+  - `nvm use --delete-prefix v24.13.0 --silent` cleared the conflicting user
+    npm config
+
 ## BIOS Notes
 
 Safe BIOS changes to consider:
